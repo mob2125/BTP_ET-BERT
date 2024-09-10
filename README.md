@@ -1,4 +1,4 @@
-## **Project Scope: Reproducing and Distilling ET-BERT for University Network Data**
+## **Project Scope: Reproducing and Distilling ET-BERT for Campus Network Data**
 
 **Project Goal:**
 
