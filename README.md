@@ -38,4 +38,4 @@ To reproduce the ET-BERT model for the specific domain of university network dat
 **Distillation:**
     To distill the model run the following code:
 
-   python3 distillation/distill.py --teacher_model_path models/pretrained.bin --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt --output_model_path models/distilled_model.bin --world_size 2 --gpu_ranks 0 1 --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 --embedding word_pos_seg --encoder transformer --mask fully_visible --target tinybert
+    python3 distillation/distill.py --teacher_model_path models/pretrained.bin --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt --output_model_path models/distilled_model.bin --world_size 2 --gpu_ranks 0 1 --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 --embedding word_pos_seg --encoder transformer --mask fully_visible --target tinybert
