@@ -27,18 +27,15 @@ To reproduce the ET-BERT model for the specific domain of university network dat
 **Pretraining:**
     To pretrain the model run the following code:
 
-    ```
        python3 pre-training/pretrain.py --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt --output_model_path models/pre-trained_model.bin --world_size 2 --gpu_ranks 0 1 --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
-    ```
 
 **Fine-tuning:**
     To fine-tune the model run the following code:
-    ```
+    
     python3 fine-tuning/run_classifier.py --pretrained_model_path models/pre-trained_model.bin --vocab_path models/encryptd_vocab.txt --train_path datasets/ISCX_data/train_dataset.tsv --dev_path datasets/ISCX_data/valid_dataset.tsv --test_path datasets/ISCX_data/test_dataset.tsv --epochs_num 10 --batch_size 32 --embedding word_pos_seg --encoder transformer --mask fully_visible --seq_length 128 --learning_rate 2e-5
-    ```
+    
     
 **Distillation:**
     To distill the model run the following code:
-    ```
+
    python3 distillation/distill.py --teacher_model_path models/pretrained.bin --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt --output_model_path models/distilled_model.bin --world_size 2 --gpu_ranks 0 1 --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 --embedding word_pos_seg --encoder transformer --mask fully_visible --target tinybert
-    ```
